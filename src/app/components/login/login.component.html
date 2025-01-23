@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+<div class="w-full h-screen flex items-center justify-center">
+    <div class="w-11/12 sm:w-5/12 md:w-4/12 glass text-sm">
+        <div class="w-full text-center my-3">
+            <h2 class="text-2xl font-bold text-black">Login</h2>
+        </div>
+        <form class="my-2" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="flex border-b-black border-b-2 mx-5 my-7 py-1">
+                <input type="email" class="w-11/12 bg-transparent outline-none placeholder-black" placeholder="Enter Email Address" formControlName="email">
+                <div class="w-2/12 flex items-center justify-center">
+                    <i class="fa-solid fa-envelope text-xl"></i>                
+                </div>
+            </div>
+            <div class="flex border-b-black border-b-2 mx-5 my-7 py-1">
+                <input type="password" class="w-11/12 bg-transparent outline-none placeholder-black" placeholder="Enter Password" formControlName="password">
+                <div class="w-2/12 flex items-center justify-center">
+                    <i class="fa-solid fa-lock text-xl"></i>                
+                </div>
+            </div>
+            <div class="mx-5 my-7 py-2">
+                <button class="bg-black text-white rounded-lg w-full p-2" type="submit">Login</button>
+            </div>
+            <a routerLink="/register" class="mx-5 my-5 py-2 flex items-center justify-center cursor-pointer">
+                <P class="text-sm text-decoration-line: underline">Doesn't have a account? / Register</P>
+            </a>
+        </form>
+    </div>
+
+</div>
