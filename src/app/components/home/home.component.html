@@ -1,0 +1,6 @@
+<div>
+    <app-nav-bar></app-nav-bar>
+    <div class="grid sm:grid-cols-3 grid-cols-1 gap-4 p-10 mt-10">
+            <app-cards *ngFor="let card of cards" [data]="card"></app-cards>
+    </div>
+</div>

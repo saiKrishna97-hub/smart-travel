@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { APIService } from '../../services/api.service';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
@@ -19,7 +19,11 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService) {
+  constructor(
+    private fb: FormBuilder,
+    private apiService: APIService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -38,6 +42,8 @@ export class LoginComponent {
     };
     this.apiService.getLoginDetails(obj).subscribe((data) => {
       console.log(data);
+      this.apiService.setUsername(data.username);
+      this.router.navigate(['home']);
     });
   };
 }
