@@ -14,6 +14,7 @@ export class NavBarComponent {
   constructor(private apiService: APIService) {}
 
   ngOnInit() {
-    this.username = this.apiService.getUsername();
+    // this.username = this.apiService.getUsername();
+    this.username = window.sessionStorage.getItem('username');
   }
 }

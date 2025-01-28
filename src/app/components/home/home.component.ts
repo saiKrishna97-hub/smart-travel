@@ -34,4 +34,7 @@ export class HomeComponent {
     //   modeOfTransport: 'Cab/Taxi Services',
     // },
   ];
+
+  constructor() {}
+  ngOnInit() {}
 }

@@ -23,4 +23,8 @@ export class APIService {
   getUsername() {
     return this.username;
   }
+
+  // getCities() {
+  //   return this.http.get('/src/assets/jsons/cities.json');
+  // }
 }

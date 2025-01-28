@@ -42,7 +42,8 @@ export class LoginComponent {
     };
     this.apiService.getLoginDetails(obj).subscribe((data) => {
       console.log(data);
-      this.apiService.setUsername(data.username);
+      window.sessionStorage.setItem('username', data.username);
+      // this.apiService.setUsername(data.username);
       this.router.navigate(['home']);
     });
   };

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Card } from '../../cards.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -10,7 +11,8 @@ import { Card } from '../../cards.model';
 })
 export class CardsComponent {
   @Input() data!: Card;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInIt() {}
+  bookNow = () => this.router.navigate(['bookings']);
 }
