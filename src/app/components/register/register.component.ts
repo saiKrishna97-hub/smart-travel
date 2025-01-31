@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -15,7 +15,7 @@ import { APIService } from '../../services/api.service';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder, private apiService: APIService) {
@@ -26,7 +26,9 @@ export class RegisterComponent {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('Component instiated');
+  }
 
   register = () => {
     console.log('data', this.registerForm);

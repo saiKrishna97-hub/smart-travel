@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class APIService {
-  username: any;
+  username: string = '';
+  url: string = '/assets/jsons/cities.json';
   constructor(private http: HttpClient) {}
 
   getLoginDetails = (obj: any): Observable<any> => {
@@ -24,7 +25,7 @@ export class APIService {
     return this.username;
   }
 
-  // getCities() {
-  //   return this.http.get('/src/assets/jsons/cities.json');
-  // }
+  getCities() {
+    return this.http.get(this.url);
+  }
 }

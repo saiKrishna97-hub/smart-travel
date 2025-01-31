@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -16,7 +16,7 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
@@ -30,7 +30,9 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('Component is intiated');
+  }
 
   login = () => {
     console.log('data', this.loginForm);

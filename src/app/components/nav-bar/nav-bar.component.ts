@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../services/api.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { APIService } from '../../services/api.service';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   username: any;
 
   constructor(private apiService: APIService) {}
